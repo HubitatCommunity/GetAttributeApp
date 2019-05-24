@@ -165,7 +165,7 @@ def updateCheck()
 	state.Version = "${thisVersion.major}.${thisVersion.minor}"
 	state.InternalName = "GetAttributesApp"
 	
-	def paramsUD = [uri: "https://csteele-pd.github.io/Hubitat-master/versions.json"]
+	def paramsUD = [uri: "https://hubitatcommunity.github.io/GetAttributeApp/versions.json"]
 	try {
 		httpGet(paramsUD) { respUD ->
 			// log.warn " Version Checking - Response Data: ${respUD.data}"   // Troubleshooting Debug Code - Uncommenting this line should show the JSON response from your webserver
