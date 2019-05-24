@@ -170,6 +170,7 @@ def initialize()
 }
 
 
+// Check Version   ***** with great thanks and acknowlegment to Cobra (CobraVmax) for his original code **************
 def updateCheck()
 {    
     state.Version = "${thisVersion.major}.${thisVersion.minor}"
@@ -224,5 +225,5 @@ def updateCheck()
     }
 }
 
-def getThisVersion()  {[status: "Beta", major: 0, minor: 4, build: 0]}
+def getThisVersion()  {[status: "Beta", major: 0, minor: 4, build: 1]}
 def getThisCopyright(){[author: "C Steele", year: "&copy; 2019 C Steele "]}
