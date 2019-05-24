@@ -1,1 +1,19 @@
-123
+{
+        "Comment": "Last updated: 24/05/2019",
+        "copyright": " &#9400; 2019 community",
+        "versions": {
+                "Application": {
+                        "GetAttributesApp": "0.3"
+                },
+                "Driver": {
+                },
+
+                "UpdateInfo": {
+                        "Application": {
+                                "GetAttributesApp": "Updated: 25/05/2019" 
+                        },
+                        "Driver": {
+                        }
+                }
+        }
+}
