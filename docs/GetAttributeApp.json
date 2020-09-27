@@ -1,0 +1,18 @@
+{
+  "packageName": "GetAttributeApp",
+  "author": "csteele",
+  "version": "0.4.2",
+  "minimumHEVersion": "0.4.2",
+  "dateReleased": "2020-02-07",
+  "apps": [
+    {
+      "id": "b121e7fc-8a00-43bf-ab6f-15b3624ea2f4",
+      "name": "Get Attributes App",
+      "namespace": "csteele-PD",
+      "location": "https://raw.githubusercontent.com/HubitatCommunity/GetAttributeApp/master/GetAttributesApp.groovy",
+      "required": false,
+      "oauth": false,
+      "primary": false
+    }
+  ]
+}
