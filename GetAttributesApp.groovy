@@ -175,7 +175,7 @@ def display() {
 // Check Version   ***** with great thanks and acknowledgment to Cobra (CobraVmax) for his original code ****
 def updateCheck()
 {    
-	def paramsUD = [uri: "https://csteele-pd.github.io/Hubitat-master/version2.json"]
+	def paramsUD = [uri: "https://hubitatcommunity.github.io/GetAttributeApp/version2.json"]
 	
  	asynchttpGet("updateCheckHandler", paramsUD) 
 }
