@@ -10,9 +10,8 @@
       "name": "Get Attributes App",
       "namespace": "csteele-PD",
       "location": "https://raw.githubusercontent.com/HubitatCommunity/GetAttributeApp/master/GetAttributesApp.groovy",
-      "required": false,
-      "oauth": false,
-      "primary": false
+      "required": true,
+      "oauth": false
     }
   ]
 }
