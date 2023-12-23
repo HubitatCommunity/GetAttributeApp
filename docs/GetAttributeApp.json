@@ -3,8 +3,8 @@
   "releaseNotes": "--initial public release",
   "documentationLink": "https://github.com/HubitatCommunity/GetAttributeApp/blob/master/README.md",
   "author": "csteele",
-  "version": "0.4.2",
-  "minimumHEVersion": "0.4.2",
+  "version": "0.4.4",
+  "minimumHEVersion": "2.4.2",
   "dateReleased": "2020-02-07",
   "apps": [
     {
