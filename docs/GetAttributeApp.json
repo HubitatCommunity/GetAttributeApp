@@ -1,6 +1,6 @@
 {
   "packageName": "GetAttributeApp",
-  "releaseNotes": "  --   initial public release\nv0.4.4	Remove updateCheck() - let HPM check for an update.",
+  "releaseNotes": "  --    initial public release\nv0.4.4  Remove updateCheck() - let HPM check for an update.",
   "documentationLink": "https://github.com/HubitatCommunity/GetAttributeApp/blob/master/README.md",
   "author": "csteele",
   "version": "0.4.4",
