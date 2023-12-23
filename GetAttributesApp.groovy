@@ -1,5 +1,5 @@
 /**
- * IMPORT URL: https://raw.githubusercontent.com/HubitatCommunity/GetAttributeApp/master/GetAttributesApp.groovy
+ * IMPORT URL: https://raw.githubusercontent.com/HubitatCommunity/GetAttributesApp/master/GetAttributesApp.groovy
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  *  in compliance with the License. You may obtain a copy of the License at:
@@ -11,7 +11,13 @@
  *
  *
 */
-	public static String version()      {  return "v0.4.2"  }
+
+/*
+ * csteele	v0.4.4	Remove updateCheck() - let HPM check for an update.
+ *
+ */
+ 
+	public static String version()      {  return "v0.4.4"  }
 
 
 definition(
@@ -164,67 +170,10 @@ def initialize()
 	Notes: 	Not very exciting.
 */
 def display() {
-	updateCheck() 
 	section{
 		paragraph "\n<hr style='background-color:#1A77C9; height: 1px; border: 0;'></hr>"
 		paragraph "<div style='color:#1A77C9;text-align:center;font-weight:small;font-size:9px'>Developed by: C Steele<br/>Version Status: $state.Status<br>Current Version: ${version()} -  ${thisCopyright}</div>"
 	}
-}
-
-
-// Check Version   ***** with great thanks and acknowledgment to Cobra (CobraVmax) for his original code ****
-def updateCheck()
-{    
-	def paramsUD = [uri: "https://hubitatcommunity.github.io/GetAttributeApp/version2.json"]
-	
- 	asynchttpGet("updateCheckHandler", paramsUD) 
-}
-
-def updateCheckHandler(resp, data) {
-
-	state.InternalName = "GetAttributesApp"
-	
-	if (resp.getStatus() == 200 || resp.getStatus() == 207) {
-		respUD = parseJson(resp.data)
-		//log.warn " Version Checking - Response Data: $respUD"   // Troubleshooting Debug Code - Uncommenting this line should show the JSON response from your webserver 
-		state.Copyright = "${thisCopyright}"
-		// uses reformattted 'version2.json' 
-		def newVerRaw = (respUD.application.(state.InternalName).ver)
-		def newVer = (respUD.application.(state.InternalName).ver.replaceAll("[.vV]", ""))
-		def currentVer = version().replaceAll("[.vV]", "")                
-		state.UpdateInfo = (respUD.application.(state.InternalName).updated)
-		def author = (respUD.author)
-            // log.debug "updateCheck: $newVerRaw, $state.UpdateInfo, $author"
-	
-		if(newVer == "NLS")
-		{
-		      state.Status = "<b>** This Application is no longer supported by $author  **</b>"       
-		      log.warn "** This Application is no longer supported by $author **"      
-		}           
-		else if(currentVer < newVer)
-		{
-			state.Status = "<b>New Version Available (Version: $newVerRaw)</b>"
-			log.warn "** There is a newer version of this Application available  (Version: $newVerRaw) **"
-			log.warn "** $state.UpdateInfo **"
-		} 
-		else if(currentVer > newVer)
-		{
-		      state.Status = "<b>You are using a Test version of this Application (Expecting: $newVerRaw)</b>"
-		}
-		else
-		{ 
-			state.Status = "Current"
-			state.UpdateInfo = "n/a"
-			if (descTextEnable) log.info "You are using the current version of this Application"
-		}
-
-	      sendEvent(name: "verUpdate", value: state.UpdateInfo)
-	      sendEvent(name: "verStatus", value: state.Status)
-      }
-      else
-      {
-           log.error "Something went wrong: CHECK THE JSON FILE AND IT'S URI"
-      }
 }
 
 def getThisCopyright(){"&copy; 2019 C Steele "}
